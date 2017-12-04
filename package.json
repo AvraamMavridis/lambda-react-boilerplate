@@ -1,11 +1,11 @@
 {
   "name": "react-lambda-boilerplate",
   "version": "1.0.0",
-  "author":
-    "Avraam Mavridis <avraammauridis@gmail.com> (https://www.avraammavridis.com)",
+  "author": "Avraam Mavridis <avraammauridis@gmail.com> (https://www.avraammavridis.com)",
   "license": "MIT",
   "scripts": {
-    "dev": "serverless offline start"
+    "dev": "./node_modules/.bin/serverless offline start",
+    "build": "webpack -p"
   },
   "dependencies": {
     "babel-loader": "^7.1.2",
@@ -19,5 +19,8 @@
     "serverless-offline": "^3.16.0",
     "serverless-webpack": "^4.1.0",
     "webpack": "^3.9.1"
+  },
+  "devDependencies": {
+    "serverless": "^1.24.1"
   }
 }

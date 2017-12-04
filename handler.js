@@ -8,17 +8,17 @@ if (!global._babelPolyfill) {
 }
 
 module.exports.hello = (event, context, callback) => {
-  var response = {
-    statusCode: 200,
-    body: ReactDOMServer.renderToString(<App />),
+
+
+  const res = {
+    body: `<style>body{ background: red; }</style>${ReactDOMServer.renderToString(<App />)}`,
     headers: {
-      'Access-Control-Allow-Origin': '*', // Required for CORS support to work
-      'Access-Control-Allow-Credentials': true, // Required for cookies, authorization headers with HTTPS
       'Content-Type': 'text/html',
     },
-  };
+    statusCode: 200
+  }
 
-  callback(null, response);
+  callback(null, res)
 
   // Use this code if you don't use the http event with the LAMBDA-PROXY integration
   // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
