@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   render() {
-    return <button onClick={this.onClick}>Click me</button>;
+    return <div>Hello React Lambda</div>;
   }
 }
 
