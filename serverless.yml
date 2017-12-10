@@ -16,3 +16,7 @@ functions:
           path: /
           method: get
           cors: true
+      - http:
+          path: /cool.js
+          method: get
+          cors: true

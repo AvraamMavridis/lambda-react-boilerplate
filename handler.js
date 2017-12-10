@@ -2,16 +2,20 @@
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
 var App = require('./components/App');
+const { PassThrough, Writable } = require('stream');
+
 
 if (!global._babelPolyfill) {
   require('babel-polyfill');
 }
 
 module.exports.hello = (event, context, callback) => {
+  const indexHtml = `<div><script type="text/javascript" src="/cool.js"/>`
+  console.log(event.path)
 
 
   const res = {
-    body: `<style>body{ background: red; }</style>${ReactDOMServer.renderToString(<App />)}`,
+    body: indexHtml,
     headers: {
       'Content-Type': 'text/html',
     },
@@ -19,7 +23,4 @@ module.exports.hello = (event, context, callback) => {
   }
 
   callback(null, res)
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
 };
