@@ -17,8 +17,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "serverless-offline": "^3.16.0",
-    "serverless-webpack": "^4.1.0",
-    "webpack": "^3.9.1"
+    "serverless-webpack": "^5.2.0",
+    "webpack": "^4.16.5"
   },
   "devDependencies": {
     "serverless": "^1.24.1"
